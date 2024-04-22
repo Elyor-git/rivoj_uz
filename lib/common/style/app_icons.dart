@@ -1,0 +1,36 @@
+class AppIcons {
+  AppIcons._();
+  static const String bell = "assets/icons/bell.png";
+  static const String camera = "assets/icons/camera.png";
+  static const String cancel = "assets/icons/cancel.png";
+  static const String cancelHomework = "assets/icons/cansel_homework.png";
+  static const String coin = "assets/icons/coin.png";
+  static const String document = "assets/icons/document.png";
+  static const String educationHat = "assets/icons/education_hat.png";
+  static const String educationHatBlue = "assets/icons/education_hat_blue.png";
+  static const String emailSend = "assets/icons/email_send.png";
+  static const String flagBrown = "assets/icons/flag_brown.png";
+  static const String flagGold = "assets/icons/flag_gold.png";
+  static const String flagSilver = "assets/icons/flag_silver.png";
+  static const String folder = "assets/icons/folder.png";
+  static const String googleDocs = "assets/icons/google_docs.png";
+  static const String homework = "assets/icons/homework.png";
+  static const String logo = "assets/icons/logo.png";
+  static const String medal1 = "assets/icons/medal_1.png";
+  static const String medal2 = "assets/icons/medal_2.png";
+  static const String medal3 = "assets/icons/medal_3.png";
+  static const String message = "assets/icons/message.png";
+  static const String messageBlue = "assets/icons/message_blue.png";
+  static const String ok = "assets/icons/ok.png";
+  static const String pencilRuler = "assets/icons/pencil_ruler.png";
+  static const String pencilRulerBlue = "assets/icons/pencil_ruler_blue.png";
+  static const String percentage = "assets/icons/percentage.png";
+  static const String photo = "assets/icons/photo.png";
+  static const String profile = "assets/icons/profile.png";
+  static const String profileBlue = "assets/icons/profile_blue.png";
+  static const String ranking = "assets/icons/ranking.png";
+  static const String scalpel = "assets/icons/skalpel.png";
+  static const String star = "assets/icons/star.png";
+  static const String userIcon = "assets/icons/user_icon.png";
+  static const String videoPlayer = "assets/icons/video_player.png";
+}
