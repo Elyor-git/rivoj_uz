@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'widgets/app_bar.dart';
+import 'widgets/modul_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,7 +23,13 @@ class _HomePageState extends State<HomePage> {
           ),
           SafeArea(
             child: Column(
-              children: [CustomAppBar()],
+              children: [
+                CustomAppBar(),
+                SizedBox(
+                  height: 30,
+                ),
+                ModulBar(),
+              ],
             ),
           )
         ],
