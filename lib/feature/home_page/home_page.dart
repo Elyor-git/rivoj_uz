@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'widgets/app_bar.dart';
 import 'widgets/modul_bar.dart';
+import 'widgets/progress_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,21 +19,24 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          Image(
-            image: AssetImage("assets/icons/background_image.png"),
-            fit: BoxFit.cover,
+          SizedBox(
+            height: double.infinity,
+            child: Image(
+              image: AssetImage("assets/icons/background_image.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           SafeArea(
             child: Column(
               children: [
                 CustomAppBar(),
-                SizedBox(
-                  height: 30,
-                ),
+                30.verticalSpace,
                 ModulBar(),
+                150.verticalSpace,
+                ProgressBar(),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

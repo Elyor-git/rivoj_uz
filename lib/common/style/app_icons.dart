@@ -32,5 +32,6 @@ class AppIcons {
   static const String scalpel = "assets/icons/skalpel.png";
   static const String star = "assets/icons/star.png";
   static const String userIcon = "assets/icons/user_icon.png";
+  static const String tutorIcon = "assets/icons/tutor_icon.png";
   static const String videoPlayer = "assets/icons/video_player.png";
 }
