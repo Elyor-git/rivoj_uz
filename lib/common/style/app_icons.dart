@@ -1,6 +1,7 @@
 class AppIcons {
   AppIcons._();
   static const String bell = "assets/icons/bell.png";
+  static const String mainLogo = "assets/icons/rivoj_uz_logo.png";
   static const String camera = "assets/icons/camera.png";
   static const String cancel = "assets/icons/cancel.png";
   static const String cancelHomework = "assets/icons/cansel_homework.png";
