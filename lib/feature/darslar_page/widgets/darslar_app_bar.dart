@@ -37,7 +37,7 @@ class _DarslarAppBarState extends State<DarslarAppBar> {
                     width: double.infinity,
                     height: 40.h,
                     child: DecoratedBox(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                           Radius.circular(50),
                         ),
@@ -53,7 +53,7 @@ class _DarslarAppBarState extends State<DarslarAppBar> {
                                 SizedBox(
                                   width: 32.w,
                                   height: 32.h,
-                                  child: Image(
+                                  child: const Image(
                                     image: AssetImage(
                                       AppIcons.coin,
                                     ),
@@ -85,7 +85,7 @@ class _DarslarAppBarState extends State<DarslarAppBar> {
                                 SizedBox(
                                   width: 32.w,
                                   height: 32.h,
-                                  child: Image(
+                                  child: const Image(
                                     image: AssetImage(
                                       AppIcons.star,
                                     ),
@@ -105,7 +105,7 @@ class _DarslarAppBarState extends State<DarslarAppBar> {
                 child: SizedBox(
                   width: 90.w,
                   height: 90.h,
-                  child: DecoratedBox(
+                  child: const DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(100),

@@ -37,9 +37,7 @@ class _ModulBarState extends State<ModulBar> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
-                    height: 6,
-                  ),
+                  SizedBox(height: 6),
                   Text(
                     "Dars 1",
                     style: TextStyle(
@@ -48,17 +46,11 @@ class _ModulBarState extends State<ModulBar> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
-                    height: 6,
-                  ),
+                  SizedBox(height: 6),
                   LinearProgressIndicator(
-                    value: 0.6,
+                    value: 0.5,
                     minHeight: 8,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        10,
-                      ),
-                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
                     color: AppColors.darkBlue,
                     backgroundColor: AppColors.whiteGrey,
                   )
@@ -74,8 +66,8 @@ class _ModulBarState extends State<ModulBar> {
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.all(
-                Radius.circular(15),
-              ),
+                Radius.circular(15)
+              )
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10),

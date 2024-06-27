@@ -18,7 +18,7 @@ class _DarslarPageState extends State<DarslarPage> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
+          const SizedBox(
             height: double.infinity,
             child: Image(
               image: AssetImage("assets/icons/background_image.png"),
@@ -31,11 +31,11 @@ class _DarslarPageState extends State<DarslarPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  DarslarAppBar(),
+                  const DarslarAppBar(),
                   30.verticalSpace,
-                  BestStudentsBar(),
+                  const BestStudentsBar(),
                   20.verticalSpace,
-                  DarsModulBar(),
+                  const DarsModulBar(),
                 ],
               ),
             ),

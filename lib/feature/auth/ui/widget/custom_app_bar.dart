@@ -1,5 +1,4 @@
 import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
-import '../../../../common/style/app_colors.dart';
 
 import '../../tools/file_importers.dart';
 

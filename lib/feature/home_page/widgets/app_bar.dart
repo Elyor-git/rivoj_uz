@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rivoj_uz_project/common/style/app_colors.dart';
+import 'package:rivoj_uz_project/feature/auth/tools/file_importers.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({
+    required this.surname,
+    required this.name,
+    super.key,
+  });
+
+  final String name;
+  final String surname;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
             width: 65,
             height: 65,
             child: DecoratedBox(
@@ -27,38 +35,28 @@ class CustomAppBar extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Xush kelibsiz,",
                 style: TextStyle(color: AppColors.white, fontSize: 15),
               ),
               Text(
-                "Ergashev Ali.",
-                style: TextStyle(color: AppColors.white, fontSize: 25),
+                "$surname $name",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.white,
+                  fontSize: 25,
+                ),
               )
             ],
           ),
-          SizedBox(
-            width: 50,
-          ),
-          SizedBox(
-            width: 35,
-            height: 35,
-            child: Image(
-              image: AssetImage(
-                "assets/icons/percentage.png",
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          SizedBox(
+         100.horizontalSpace,
+          const SizedBox(
             width: 35,
             height: 35,
             child: Image(

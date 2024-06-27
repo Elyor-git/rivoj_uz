@@ -15,7 +15,7 @@ class _NotificationPageState extends State<NotificationPage> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
+          const SizedBox(
             height: double.infinity,
             child: Image(
               image: AssetImage("assets/icons/background_image.png"),
@@ -33,7 +33,7 @@ class _NotificationPageState extends State<NotificationPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          BackButton(
+                          const BackButton(
                             color: AppColors.white,
                           ),
                           Text(
@@ -50,13 +50,13 @@ class _NotificationPageState extends State<NotificationPage> {
                     ),
                   ),
                   30.verticalSpace,
-                  NotificationItem(),
-                  NotificationItem(),
-                  NotificationItem(),
-                  NotificationItem(),
-                  NotificationItem(),
-                  NotificationItem(),
-                  NotificationItem(),
+                  const NotificationItem(),
+                  const NotificationItem(),
+                  const NotificationItem(),
+                  const NotificationItem(),
+                  const NotificationItem(),
+                  const NotificationItem(),
+                  const NotificationItem(),
                 ],
               ),
             ),
@@ -78,7 +78,7 @@ class NotificationItem extends StatelessWidget {
         width: double.infinity,
         height: 120.h,
         child: DecoratedBox(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.all(
               Radius.circular(20),

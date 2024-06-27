@@ -17,7 +17,7 @@ class _ProgressBarState extends State<ProgressBar> {
       child: SizedBox(
         width: double.infinity,
         height: 420.h,
-        child: DecoratedBox(
+        child: const DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(
               Radius.circular(10),

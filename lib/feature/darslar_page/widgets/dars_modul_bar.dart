@@ -17,7 +17,7 @@ class _DarsModulBarState extends State<DarsModulBar> {
       child: SizedBox(
         width: double.infinity,
         height: 440.h,
-        child: DecoratedBox(
+        child: const DecoratedBox(
           decoration: BoxDecoration(
             color: AppColors.whiteGrey,
             borderRadius: BorderRadius.all(

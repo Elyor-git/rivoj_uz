@@ -1,15 +1,20 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rivoj_uz_project/common/style/app_icons.dart';
 import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
+import 'package:rivoj_uz_project/feature/auth/bloc/login_bloc/login_bloc.dart';
+import 'package:rivoj_uz_project/feature/auth/bloc/login_bloc/login_states.dart';
 import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_bloc.dart';
 import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_event.dart';
 import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_states.dart';
 import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
+import 'package:rivoj_uz_project/feature/auth/repository/login_repository.dart';
 import 'package:rivoj_uz_project/feature/auth/service/validation_helper.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/blocked_screen.dart';
 import 'package:rivoj_uz_project/feature/auth/ui/widget/custom_button.dart';
 import 'package:rivoj_uz_project/feature/auth/ui/widget/forgot_password_screen.dart';
+import 'package:rivoj_uz_project/feature/home_page/home_page.dart';
 
+import '../../../common/const/config.dart';
 import '../tools/file_importers.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -67,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   onChanged: (value) => phoneNumber = value,
                   keyboardType: TextInputType.number,
-                  inputFormatters: [ValidationHelper.phoneMaskFormatter],
+                  //inputFormatters: [ValidationHelper.phoneMaskFormatter],
                   style: const TextStyle(
                     color: AppColors.black,
                     fontWeight: FontWeight.w600,
@@ -144,23 +149,41 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Column(
               children: [
-                CustomButton(
-                  onTap: () {
-                    ValidationHelper.phoneNumberAndPassword(
-                      context: context,
-                      phoneNumber: phoneNumber,
-                      password: password,
-                      successCompletion: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const BlockedScreen(),
-                          ),
+                BlocConsumer<LoginBloc, LoginState>(
+                  listener: (context, state) {
+                    if (state.loginStatus == LoginStatus.success &&
+                        state.user != null) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(user: state.user!),
+                        ),
+                      );
+                    } else if (state.loginStatus == LoginStatus.error) {
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text(state.message)));
+                    }
+                  },
+                  builder: (context, state) {
+                    return CustomButton(
+                      onTap: () {
+                        ValidationHelper.phoneNumberAndPassword(
+                          context: context,
+                          phoneNumber: phoneNumber,
+                          password: password,
+                          successCompletion: () {
+                            context.read<LoginBloc>().add(
+                                  LoginApi(
+                                    phoneNumber: phoneNumber,
+                                    password: password,
+                                  ),
+                                );
+                          },
                         );
                       },
+                      text: LoginConstants.enter,
                     );
                   },
-                  text: LoginConstants.enter,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20.h),

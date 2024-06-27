@@ -26,7 +26,7 @@ class _BestStudentsBarState extends State<BestStudentsBar> {
           ),
         ),
         10.verticalSpace,
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             BestStudentItem(
@@ -77,7 +77,7 @@ class BestStudentItem extends StatelessWidget {
                 SizedBox(
                   width: 80.w,
                   height: 80.h,
-                  child: DecoratedBox(
+                  child: const DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(100),
@@ -119,7 +119,7 @@ class BestStudentItem extends StatelessWidget {
             width: 120.w,
             height: 30.h,
             child: DecoratedBox(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: AppColors.whiteSmoke,
                 borderRadius: BorderRadius.all(
                   Radius.circular(50),

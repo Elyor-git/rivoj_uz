@@ -9,8 +9,8 @@ import '../../tools/file_importers.dart';
 class OtpScreen extends StatefulWidget {
   const OtpScreen({
     required this.phoneNumber,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String phoneNumber;
 
@@ -37,7 +37,9 @@ class _OtpScreenState extends State<OtpScreen> {
 
   @override
   void dispose() {
-    otpControllers.forEach((controller) => controller.dispose());
+    for (var controller in otpControllers) {
+      controller.dispose();
+    }
     super.dispose();
   }
 

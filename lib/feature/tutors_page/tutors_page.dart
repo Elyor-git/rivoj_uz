@@ -17,7 +17,7 @@ class _TutorsPageState extends State<TutorsPage> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
+          const SizedBox(
             height: double.infinity,
             child: Image(
               image: AssetImage("assets/icons/background_image.png"),
@@ -35,7 +35,7 @@ class _TutorsPageState extends State<TutorsPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          BackButton(
+                          const BackButton(
                             color: AppColors.white,
                           ),
                           Text(
@@ -52,10 +52,10 @@ class _TutorsPageState extends State<TutorsPage> {
                     ),
                   ),
                   30.verticalSpace,
-                  TutorsItem(),
-                  TutorsItem(),
-                  TutorsItem(),
-                  TutorsItem(),
+                  const TutorsItem(),
+                  const TutorsItem(),
+                  const TutorsItem(),
+                  const TutorsItem(),
                 ],
               ),
             ),
@@ -77,7 +77,7 @@ class TutorsItem extends StatelessWidget {
         width: double.infinity,
         height: 72.h,
         child: DecoratedBox(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.all(
               Radius.circular(20),
@@ -91,7 +91,7 @@ class TutorsItem extends StatelessWidget {
                 SizedBox(
                   width: 48.w,
                   height: 48.h,
-                  child: DecoratedBox(
+                  child: const DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),

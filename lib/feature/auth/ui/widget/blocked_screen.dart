@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:rivoj_uz_project/common/style/app_icons.dart';
 import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
 import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
