@@ -1,10 +1,5 @@
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
-import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
-import 'package:rivoj_uz_project/feature/auth/service/validation_helper.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/custom_app_bar.dart';
-
-import '../../tools/file_importers.dart';
-import 'custom_button.dart';
 import 'otp_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {

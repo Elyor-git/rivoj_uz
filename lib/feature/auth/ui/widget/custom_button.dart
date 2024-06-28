@@ -1,5 +1,4 @@
-
-import '../../tools/file_importers.dart';
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({

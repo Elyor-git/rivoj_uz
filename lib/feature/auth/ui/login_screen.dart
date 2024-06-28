@@ -1,16 +1,4 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rivoj_uz_project/common/style/app_icons.dart';
-import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
-import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_bloc.dart';
-import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_event.dart';
-import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_states.dart';
-import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
-import 'package:rivoj_uz_project/feature/auth/service/validation_helper.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/blocked_screen.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/custom_button.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/forgot_password_screen.dart';
-
-import '../tools/file_importers.dart';
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -107,6 +95,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     return TextFormField(
                       onChanged: (value) => password = value,
                       obscureText: state.isObscure,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z]'))
+                      ],
                       decoration: InputDecoration(
                         labelText: LoginConstants.password,
                         hintStyle: const TextStyle(

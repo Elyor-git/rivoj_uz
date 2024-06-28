@@ -1,7 +1,4 @@
-import 'package:rivoj_uz_project/common/style/app_icons.dart';
-import 'package:rivoj_uz_project/feature/prrofile/ui/widget/bottom_sheet.dart';
-
-import '../../../auth/tools/file_importers.dart';
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
 class UserCard extends StatelessWidget {
   const UserCard({

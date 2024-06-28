@@ -1,5 +1,5 @@
-class AppIcons {
-  AppIcons._();
+final class AppIcons {
+  const AppIcons._();
   static const String bell = "assets/icons/bell.png";
   static const String mainLogo = "assets/icons/rivoj_uz_logo.png";
   static const String camera = "assets/icons/camera.png";

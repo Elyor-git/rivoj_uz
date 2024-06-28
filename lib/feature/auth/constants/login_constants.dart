@@ -17,5 +17,5 @@ abstract class LoginConstants {
   static String save = 'Saqlash';
 
   static String currentPhoneNumber(String phoneNumber) =>
-      'Kod +998*****${phoneNumber.substring(0)} raqamiga jo\'natildi';
+      'Kod +998*****${phoneNumber.substring(7)} raqamiga jo\'natildi';
 }

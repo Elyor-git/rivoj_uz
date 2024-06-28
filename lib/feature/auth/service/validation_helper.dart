@@ -87,23 +87,6 @@ class ValidationHelper {
       _showSnackBar(context, 'Parol kamida 8 belgidan iborat bo\'lishi kerak');
       return;
     }
-    if (!newPassword.contains(RegExp(r'\d'))) {
-      _showSnackBar(context, 'Parolda kamida bir raqam bo\'lishi kerak');
-      return;
-    }
-
-    if (!newPassword.contains(RegExp(r'[a-zA-Z]'))) {
-      _showSnackBar(
-        context,
-        'Parolda kamida bir harf bo\'lishi kerak',
-      );
-      return;
-    }
-
-    if (!newPassword.contains(RegExp(r'[^\da-zA-Z]'))) {
-      _showSnackBar(context, 'Parolda kamida bitta belgi bo\'lishi kerak');
-      return;
-    }
     successCompletion();
   }
 

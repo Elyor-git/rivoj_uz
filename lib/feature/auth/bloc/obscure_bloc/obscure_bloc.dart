@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-
 import 'obscure_event.dart';
 import 'obscure_states.dart';
 

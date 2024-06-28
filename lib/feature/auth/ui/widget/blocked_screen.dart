@@ -1,12 +1,4 @@
-
-
-
-
-import 'package:rivoj_uz_project/common/style/app_icons.dart';
-import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
-import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
-
-import '../../tools/file_importers.dart';
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
 class BlockedScreen extends StatelessWidget {
   const BlockedScreen({super.key});

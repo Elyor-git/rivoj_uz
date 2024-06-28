@@ -1,7 +1,4 @@
-import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
-import '../../../../common/style/app_colors.dart';
-
-import '../../tools/file_importers.dart';
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({

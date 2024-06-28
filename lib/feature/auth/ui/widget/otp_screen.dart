@@ -1,16 +1,10 @@
-import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
-import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/custom_app_bar.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/custom_button.dart';
-import 'package:rivoj_uz_project/feature/auth/ui/widget/reset_password_screen.dart';
-
-import '../../tools/file_importers.dart';
+import 'package:rivoj_uz_project/common/tools/file_importers.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({
     required this.phoneNumber,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String phoneNumber;
 
