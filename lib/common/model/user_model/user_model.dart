@@ -1,9 +1,6 @@
-import 'package:flutter/foundation.dart';
-import 'attendance_list_model.dart';
-import 'discoun_list_model.dart';
-
 class UserModel {
   const UserModel({
+    required this.id,
     required this.name,
     required this.surname,
     required this.avatar,
@@ -21,6 +18,7 @@ class UserModel {
     // required this.discountList,
   });
 
+  final String id;
   final String name;
   final String surname;
   final String? avatar;
@@ -38,6 +36,7 @@ class UserModel {
   // final List<DiscountList> discountList;
 
   factory UserModel.fromJson(Map<String, Object?> json) => UserModel(
+        id: json['id'] as String? ?? "",
         name: json['name'] as String? ?? "",
         surname: json['surname'] as String? ?? "",
         avatar: json['avatar'] as String? ?? "",
@@ -86,12 +85,14 @@ class UserModel {
   //     };
 
   UserModel copyWith({
+    String? id,
     String? name,
     String? surname,
     String? avatar,
     String? phoneNumber,
     String? password,
     String? birth,
+
     // String? subject,
     // int? currentModule,
     // int? currentLesson,
@@ -102,6 +103,7 @@ class UserModel {
     // List<DiscountList>? discountList,
   }) =>
       UserModel(
+        id: id ?? this.id,
         name: name ?? this.name,
         surname: surname ?? this.surname,
         avatar: avatar ?? this.avatar,
@@ -127,7 +129,8 @@ class UserModel {
         other.avatar == avatar &&
         other.phoneNumber == phoneNumber &&
         other.birth == birth &&
-        other.password == password;
+        other.password == password &&
+        other.id == id;
     // other.birthday == birthday &&
     // other.subject == subject &&
     // other.currentModule == currentModule &&
@@ -146,7 +149,8 @@ class UserModel {
       avatar.hashCode ^
       phoneNumber.hashCode ^
       password.hashCode ^
-      birth.hashCode;
+      birth.hashCode ^
+      id.hashCode;
 
   // birthday.hashCode ^
   // subject.hashCode ^
@@ -165,7 +169,8 @@ class UserModel {
       'avatar: $avatar,'
       'phoneNumber: $phoneNumber,'
       'password: $password,'
-      'birth : $birth'
+      'birth : $birth,'
+      'id: $id,'
       // 'birthday: $birthday,'
       // 'subject: $subject,'
       // 'currentModule: $currentModule,'

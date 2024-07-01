@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rivoj_uz_project/common/style/app_icons.dart';
 import 'package:rivoj_uz_project/common/utils/custom_extension.dart';
@@ -8,14 +7,11 @@ import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_bloc.dar
 import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_event.dart';
 import 'package:rivoj_uz_project/feature/auth/bloc/obscure_bloc/obscure_states.dart';
 import 'package:rivoj_uz_project/feature/auth/constants/login_constants.dart';
-import 'package:rivoj_uz_project/feature/auth/repository/login_repository.dart';
 import 'package:rivoj_uz_project/feature/auth/service/validation_helper.dart';
+import 'package:rivoj_uz_project/feature/auth/tools/file_importers.dart';
 import 'package:rivoj_uz_project/feature/auth/ui/widget/custom_button.dart';
 import 'package:rivoj_uz_project/feature/auth/ui/widget/forgot_password_screen.dart';
 import 'package:rivoj_uz_project/feature/home_page/home_page.dart';
-
-import '../../../common/const/config.dart';
-import '../tools/file_importers.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -72,29 +68,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   onChanged: (value) => phoneNumber = value,
                   keyboardType: TextInputType.number,
-                  //inputFormatters: [ValidationHelper.phoneMaskFormatter],
+                  inputFormatters: [ValidationHelper.phoneMaskFormatter],
                   style: const TextStyle(
                     color: AppColors.black,
                     fontWeight: FontWeight.w600,
                   ),
-                  decoration: InputDecoration(
-                    labelText: LoginConstants.enterPhoneNumber,
-                    prefix: const Text(
-                      '+998 ',
-                      style: TextStyle(color: AppColors.black),
+                  decoration: const InputDecoration(
+                    hintText: "+998",
+                    hintStyle: TextStyle(color: AppColors.darkGrey54),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.lightGrey),
                     ),
-                    hintStyle: const TextStyle(
-                      color: AppColors.darkGrey54,
-                    ),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppColors.lightGrey,
-                      ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppColors.mainBlue,
-                      ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.mainBlue),
                     ),
                   ),
                 ),
@@ -113,19 +99,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       onChanged: (value) => password = value,
                       obscureText: state.isObscure,
                       decoration: InputDecoration(
-                        labelText: LoginConstants.password,
-                        hintStyle: const TextStyle(
-                          color: AppColors.darkGrey54,
-                        ),
+                        hintText: LoginConstants.password,
+                        hintStyle: const TextStyle(color: AppColors.darkGrey54),
                         border: const OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.lightGrey,
-                          ),
+                          borderSide: BorderSide(color: AppColors.lightGrey),
                         ),
                         focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppColors.mainBlue,
-                          ),
+                          borderSide: BorderSide(color: AppColors.mainBlue),
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -174,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           successCompletion: () {
                             context.read<LoginBloc>().add(
                                   LoginApi(
-                                    phoneNumber: phoneNumber,
+                                    phoneNumber: "+998${ValidationHelper.phoneMaskFormatter.getUnmaskedText()}",
                                     password: password,
                                   ),
                                 );

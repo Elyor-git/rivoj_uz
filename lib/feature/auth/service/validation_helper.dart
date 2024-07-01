@@ -7,9 +7,9 @@ class ValidationHelper {
   const ValidationHelper._();
 
   static final _phoneMaskFormatter = MaskTextInputFormatter(
-    mask: '(##) ###-##-##',
+    mask: '+998 (##) ###-##-##',
     filter: {"#": RegExp(r'[0-9]')},
-    type: MaskAutoCompletionType.lazy,
+    type: MaskAutoCompletionType.eager,
   );
 
   static void phoneNumberAndPassword({
